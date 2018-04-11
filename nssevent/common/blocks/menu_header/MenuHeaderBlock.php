@@ -89,9 +89,12 @@ class MenuHeaderBlock extends CWidget
                               'order'=>' t.order ASC ')
                         );
         $result = array();
+
         foreach ($menu_items as $menu_item) {
             $result[] = array('name'=>$menu_item->name, 'link'=>self::buildLink($menu_item),'id'=>$menu_item->menu_item_id,'parent'=>$menu_item->parent);
+
         }
+
         return $result;
     }
 
@@ -108,7 +111,6 @@ class MenuHeaderBlock extends CWidget
     }
 
     public static function buildLink($item){
-
         switch ($item->type) {
              case ConstantDefine::MENU_TYPE_HOME:
                 return SITE_PATH;
@@ -133,6 +135,7 @@ class MenuHeaderBlock extends CWidget
                     }
                 break;
             case ConstantDefine::MENU_TYPE_TERM:
+                return SITE_PATH.'page?slug=term&id='.$item->value;
                 break;
             case ConstantDefine::MENU_TYPE_STRING:
                 return $item->value;
