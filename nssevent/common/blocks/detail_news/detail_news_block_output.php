@@ -37,7 +37,10 @@
 				</div>
 				<ul class="block-key">
 					<li>Từ khóa</li>
-					<?php echo $post->tags?>
+					<?php $data = explode(',',$post->tags);
+						foreach ($data as $row){ ?>
+						<li><a href="<?php $tag = str_replace(" ","+",stripVietnamese($row));echo bu()."page?slug=search&search=".$tag?>"><?php echo $row?></a></li>
+					<?php }?>
 				</ul>
 	</section>
 </section>

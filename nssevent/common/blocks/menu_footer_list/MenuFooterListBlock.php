@@ -133,6 +133,7 @@ class MenuFooterListBlock extends CWidget
                     }
                 break;
             case ConstantDefine::MENU_TYPE_TERM:
+                return SITE_PATH.'page?slug=term&id='.$item->value;
                 break;
             case ConstantDefine::MENU_TYPE_STRING:
                 return $item->value;

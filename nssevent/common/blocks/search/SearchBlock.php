@@ -45,10 +45,10 @@ class SearchBlock extends CWidget
 	            //Set Params from Block Params
 	            $params=b64_unserialize($this->block['params']);
 		    	$this->setParams($params);
-          
+
           $key = $_GET['search'];
           $criteria = new CDbCriteria;
-          $criteria->condition = "object_title LIKE '%$key%' OR object_author_name LIKE '%$key%' ORDER BY object_date DESC ";
+          $criteria->condition = "object_title LIKE '%$key%' OR object_author_name LIKE '%$key%' OR tags LIKE '%$key%' ORDER BY object_date DESC ";
           $provider = new CActiveDataProvider('Object',array(
                                   'criteria'=> $criteria,
                                   'pagination'=>array(
