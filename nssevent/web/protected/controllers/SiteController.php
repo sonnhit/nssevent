@@ -3,6 +3,8 @@
 class SiteController extends FeController
 {
 
+	
+
 	public function actionIndex()
 	{
 		$slug=Yii::app()->settings->get('general', 'homepage');
@@ -19,7 +21,6 @@ class SiteController extends FeController
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
-
 
 
 }

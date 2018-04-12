@@ -50,10 +50,6 @@ class ContactBlock extends CWidget
 
     }
 
-    public function actionformContact(){
-      echo "asd";die;
-    }
-
 
     public function validate(){
 		return true ;

@@ -2,7 +2,7 @@
 
 /**
  * This is the model class for Register Form.
- * 
+ *
  * @author Tuan Nguyen <nganhtuan63@gmail.com>
  * @version 1.0
  * @package cms.models.user
@@ -13,7 +13,7 @@ class UserRegisterForm extends CFormModel
 	public $username;
 	public $email;
 	public $password;
-        
+
 	/**
 	 * Declares the validation rules.
 	 * The rules state that username and password are required,
@@ -30,8 +30,8 @@ class UserRegisterForm extends CFormModel
                         'attributeName'=>'email',
                         'className'=>'cms.models.user.User',
                         'message'=>t('cms','This email has been registered.')),
-			
-			
+
+
 		);
 	}
 
@@ -41,35 +41,37 @@ class UserRegisterForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-			
+
                         'username'=>t('cms','Username'),
                         'email'=>t('cms','Email'),
                         'password'=>t('cms','Password')
 		);
 	}
 
-	
+
         /**
          * Function to Register user information
-         * @return type 
+         * @return type
          */
         public function doSignUp()
 	{
 		if(!$this->hasErrors())
 		{
+
 			$newUser = new User;
-			
+
 			$newUser->password=$this->password;
-                        
+
 			if(!$newUser->save()){
+
                                 $this->addError('email',t('Something is wrong with the Registration Process. Please try again later!'));
                                 return false;
-			} else {                          				
-                            //We can start to add Profile record here                            				
-                             
+			} else {
+                            //We can start to add Profile record here
+
                             //We can start to add User Activity here
-                            
-                            //We can check to send Email or not   
+
+                            //We can check to send Email or not
 
                             //Create new UserLoginForm
                             $login_form=new UserLoginForm();
@@ -77,10 +79,10 @@ class UserRegisterForm extends CFormModel
                             $login_form->password=$this->password;
                             return $login_form->login();
 			}
-				
+
 		}
 	}
 
-        
-	
+
+
 }

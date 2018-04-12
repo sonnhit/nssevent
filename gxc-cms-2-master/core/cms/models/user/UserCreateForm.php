@@ -2,7 +2,7 @@
 
 /**
  * This is the model class for Create User.
- * 
+ *
  * @author Tuan Nguyen <nganhtuan63@gmail.com>
  * @version 1.0
  * @package cms.models.user
@@ -10,12 +10,12 @@
  */
 class UserCreateForm extends CFormModel
 {
-    
+
         public $username;
         public $display_name;
         public $password;
         public $email;
-        
+
 
 	/**
 	 * Declares the validation rules.
@@ -25,7 +25,7 @@ class UserCreateForm extends CFormModel
 	public function rules()
 	{
             return array(
-                array('username, display_name, email, password', 'required'),                
+                array('username, display_name, email, password', 'required'),
                 array('display_name', 'length', 'max'=>255),
                 array('password','length','min'=>3),
                 array('email, username', 'length', 'max'=>128),
@@ -41,7 +41,7 @@ class UserCreateForm extends CFormModel
              );
 	}
 
-        
+
 	/**
 	 * Declares attribute labels.
 	 */
@@ -51,9 +51,9 @@ class UserCreateForm extends CFormModel
 			'username'=>t('cms','Username'),
                         'display_name'=>t('cms','Display Name'),
                         'password'=>t('cms','Password'),
-                        'email'=>t('cms','Email')                        
+                        'email'=>t('cms','Email')
 		);
 	}
-              
+
 
 }

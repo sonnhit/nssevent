@@ -4,6 +4,10 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'comment-contact_block_output-form',
 	'enableAjaxValidation'=>false,
+	'clientOptions'=>array(
+		'validateOnSubmit'=>true,
+	),
+
 )); ?>
 
 	<?php echo $form->errorSummary($model); ?>
@@ -26,6 +30,15 @@
 		<?php echo $form->textarea($model,'comment_content',array('class'=>'txtarea-ev'))?>
 		<?php echo $form->error($model,'comment_content'); ?>
     <li>
+
+		<?php if(CCaptcha::checkRequirements()): ?>
+		<li >
+			<?php echo $form->labelEx($model,'verifyCode'); ?>
+			<?php echo $form->textField($model,'verifyCode',array('class'=>'txt-ev-1')); ?>
+			<div style="padding-left:85px;"> <?php $this->widget('CCaptcha'); ?> </div>
+			<?php echo $form->error($model,'verifyCode'); ?>
+		</li>
+		<?php endif; ?>
 
   	<li>
   		<?php echo CHtml::submitButton('Gửi',array('class'=>'sm-ev')); ?>

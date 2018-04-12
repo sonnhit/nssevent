@@ -24,6 +24,7 @@
  */
 class Comment extends CActiveRecord
 {
+	public $verifyCode;
 	const STATUS_PENDING=1;
 	const STATUS_APPROVED=2;
 	/**
@@ -60,6 +61,8 @@ class Comment extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('comment_id, object_id, comment_author, comment_author_email, comment_author_url, comment_author_IP, comment_date, comment_date_gmt, comment_content, comment_karma, comment_approved, comment_agent, comment_type, comment_parent, userid', 'safe', 'on'=>'search'),
+
+			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 		);
 	}
 
@@ -98,6 +101,7 @@ class Comment extends CActiveRecord
 			'userid' => t('cms','User ID'),
 			'comment_title' => t('cms','Title'),
 			'comment_modified_content' => t('cms','Modified content'),
+			'verifyCode'=>t('cms','Captcha <span>*</span>')
 		);
 	}
 

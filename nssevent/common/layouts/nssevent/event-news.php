@@ -84,9 +84,4 @@
 			</div>
 		</footer>
 	</div>
-	<a class="btn-register1" href="#" title=""></a>
-	<script type="text/javascript" src="<?php echo $layout_asset?>/js/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="<?php echo $layout_asset?>/js/jquery.flexslider.js"></script>
-	<script type="text/javascript" src="<?php echo $layout_asset?>/js/start.js"></script>
-</body>
-</html>
+	<?php $this->renderPartial('common.layouts.nssevent.footer',array('page'=>$page,'layout_asset'=>$layout_asset)); ?>
