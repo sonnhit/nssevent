@@ -145,6 +145,7 @@ class Environment {
                  'urlManager'=>array(
                    	'urlFormat'=>'path',
                     'showScriptName'=>false,
+                    'enablePrettyUrl' => true,
                  ),
 
   						   'session' => array(

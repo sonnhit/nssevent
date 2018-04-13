@@ -14,14 +14,14 @@
                     <?php $form=$this->beginWidget('CActiveForm', array(
                     	'id'=>'search-frm',
                       'method'=>'get',
-                      'action'=>'page?slug=search',
+                      'action'=>'search',
                       'htmlOptions'=>array(
                           'class'=>'frm-search',
                       ),
                     	'enableAjaxValidation'=>false,
                     )); ?>
 
-                      <input class="txt-search" type="text" name="search" id="search-txt">
+                      <input class="txt-search" type="text" name="keyword" id="search-txt">
                     <?php $this->endWidget(); ?>
                   </li>
   </ul>

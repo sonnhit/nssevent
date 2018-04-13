@@ -15,7 +15,7 @@
                                     'itemView'=>'common.blocks.listview_notify_sub.item_render',
                                     'summaryText'=>'',
                                     'ajaxUpdate'=>true,
-                                    'enablePagination'=> true,
+                                    'enablePagination'=> false,
                                     'enableSorting'=>false,
                                     'sortableAttributes'=>array(),
                                     )

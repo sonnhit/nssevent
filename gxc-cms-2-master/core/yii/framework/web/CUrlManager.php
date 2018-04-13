@@ -127,6 +127,8 @@ class CUrlManager extends CApplicationComponent
 	const GET_FORMAT='get';
 	const PATH_FORMAT='path';
 
+	public $enablePrettyUrl = true;
+
 	/**
 	 * @var array the URL rules (pattern=>route).
 	 */

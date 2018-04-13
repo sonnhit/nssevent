@@ -136,6 +136,9 @@ class Environment {
                  'urlManager'=>array(
                     'urlFormat'=>'path',
                     'showScriptName'=>false,
+                    'rules' => array (
+                      
+                    ),
                  ),
 
                  'session' => array(
@@ -229,6 +232,8 @@ class Environment {
                     'enableProfiling' => true,
                     'enableParamLogging' => true,
                   ),
+
+
 
                    // Application Log
                    'log'=>array(
